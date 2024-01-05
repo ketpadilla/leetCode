@@ -17,6 +17,7 @@ class Solution(object):
     self.backtrack(nums, perm, [])
     return print(perm)
   
+  
   def backtrack(self, nums, perm, temp):
     if len(temp) == len(nums):
       perm.append(temp[:])
@@ -28,6 +29,8 @@ class Solution(object):
         self.backtrack(nums, perm, temp)
         temp.pop()
     
+
+# Test
 if __name__ == "__main__":
     nums = [1, 2, 3]
     Solution().permute(nums)

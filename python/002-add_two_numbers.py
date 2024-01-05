@@ -1,42 +1,40 @@
-# Definition for singly-linked list.
 class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
+  def __init__(self, val=0, next=None):
+    self.val = val
+    self.next = next
 
 class Solution(object):
-    def addTwoNumbers(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
+  def addTwoNumbers(self, l1, l2):
+    """
+    :type l1: ListNode
+    :type l2: ListNode
+    :rtype: ListNode
+    """
 
-        temp = ListNode
-        res = temp
-        carry = 0 
+    temp = ListNode
+    res = temp
+    carry = 0 
 
-        while l1 is not None or l2 is not None:
-            # Get node value
-            currl1 = l1.val if l1 else 0
-            currl2 = l2.val if l2 else 0
+    while l1 is not None or l2 is not None:
+      # Get node value
+      currl1 = l1.val if l1 else 0
+      currl2 = l2.val if l2 else 0
 
-            # Get sum and carry
-            total = currl1 + currl2 + carry
-            carry = total // 10
-            res.next = ListNode(total % 10) 
+      # Get sum and carry
+      total = currl1 + currl2 + carry
+      carry = total // 10
+      res.next = ListNode(total % 10) 
 
-            # Move to next nodes
-            if l1: l1 = l1.next
-            if l2: l2 = l2.next
-            res = res.next
-        
-        # Add remaining carry as last node
-        if carry > 0:
-            res.next = ListNode(carry)
+      # Move to next nodes
+      if l1: l1 = l1.next
+      if l2: l2 = l2.next
+      res = res.next
+    
+    # Add remaining carry as last node
+    if carry > 0:
+      res.next = ListNode(carry)
 
-        return temp.next
+    return temp.next
 
 
 # Test
