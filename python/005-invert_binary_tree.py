@@ -7,23 +7,23 @@ class TreeNode(object):
 
 
 class Solution(object):
-    def invertTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: TreeNode
-        """
-        
-        rootINV = root
-        if rootINV == None:
-            return rootINV
-        
-        # Backtrack nodes
-        self.invertTree(rootINV.left)
-        self.invertTree(rootINV.right)
+  def invertTree(self, root):
+    """
+    :type root: TreeNode
+    :rtype: TreeNode
+    """
+    
+    rootINV = root
+    if rootINV == None:
+      return rootINV
+    
+    # Backtrack nodes
+    self.invertTree(rootINV.left)
+    self.invertTree(rootINV.right)
 
-        # Swap
-        rootINV.left, rootINV.right = rootINV.right, rootINV.left
-        return rootINV
+    # Swap
+    rootINV.left, rootINV.right = rootINV.right, rootINV.left
+    return rootINV
 
 
 # Test
